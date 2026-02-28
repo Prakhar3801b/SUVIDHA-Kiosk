@@ -1,0 +1,60 @@
+# ============================================================
+#  SUVIDHA — .gitignore
+#  Files listed here will NEVER be uploaded to GitHub
+# ============================================================
+
+# ── Environment / Secret files ──────────────────────────────
+# These contain database passwords, API keys, secrets
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# ── Node modules ─────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ── Build output ──────────────────────────────────────────────
+dist/
+**/dist/
+build/
+**/build/
+
+# ── Python AI server ──────────────────────────────────────────
+ai_system/venv/
+ai_system/__pycache__/
+ai_system/**/__pycache__/
+ai_system/*.pyc
+ai_system/models/          # GPT-2 model files (~500MB) — too large for GitHub
+ai_system/model_cache/
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# ── OS generated files ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor / IDE files ────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+
+# ── Electron build artifacts ──────────────────────────────────
+frontend/kiosk/release/
+frontend/admin/release/
+*.exe
+*.dmg
+*.AppImage
+
+# ── Temporary files ───────────────────────────────────────────
+tmp/
+temp/
+*.tmp

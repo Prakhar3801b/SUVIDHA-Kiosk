@@ -1,0 +1,174 @@
+/* HomeScreen.css — White & Orange Minimal */
+
+/* ── Orange accent line above hero ──────────────────────── */
+.home-hero {
+    text-align: center;
+    padding: 2rem 2rem 0.75rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.home-hero::before {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 999px;
+    margin: 0 auto 1.2rem;
+}
+
+.home-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.home-title span {
+    color: var(--accent);
+}
+
+.home-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* ── Service Tiles Grid ──────────────────────────────────── */
+.home-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem 3rem 1rem;
+    flex: 1;
+    align-content: start;
+}
+
+/* ── Individual Tile ─────────────────────────────────────── */
+.tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 2rem 1.8rem 1.8rem;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: left;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+/* Orange left bar */
+.tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--tile-color);
+    border-radius: 4px 0 0 4px;
+    transition: width 0.22s ease;
+}
+
+/* Subtle orange glow on hover */
+.tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+
+.tile:hover {
+    border-color: var(--tile-color);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tile:hover::before {
+    width: 6px;
+}
+
+.tile:hover::after {
+    opacity: 1;
+}
+
+/* ── Tile Elements ───────────────────────────────────────── */
+.tile-icon {
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.tile-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.tile-title-hi {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.tile-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* Arrow — appears on hover */
+.tile-arrow {
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    font-size: 1.3rem;
+    color: var(--tile-color);
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateX(-6px);
+}
+
+.tile:hover .tile-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Kiosk ID chip in header ─────────────────────────────── */
+.header-kiosk {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(249, 115, 22, 0.25);
+    letter-spacing: 0.5px;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.home-footer {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    background: #fff;
+    border-top: 1.5px solid var(--border);
+    flex-shrink: 0;
+    letter-spacing: 0.2px;
+}
